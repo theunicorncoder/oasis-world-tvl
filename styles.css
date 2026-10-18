@@ -47,3 +47,25 @@ url("oasis-world-tvl-hero.jpg") center/cover no-repeat}
 .service-banner{display:block;width:100%;height:auto}
 .banner-link{display:block}
 @media(max-width:720px){.service-gallery{grid-template-columns:1fr}.brand-with-logo img{height:36px;max-width:190px}.profile-photo{width:240px;height:240px}}
+
+
+/* Unified service cards */
+.unified-services{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.service-image-card{background:#fff;border-radius:26px;overflow:hidden;border:1px solid rgba(216,178,76,.35);box-shadow:0 12px 34px rgba(35,10,45,.12);text-align:left}
+.service-image-card img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.service-copy{padding:20px 22px 24px}
+.service-copy h3{margin:0 0 8px;color:var(--purple);font-size:1.25rem}
+.service-copy p{margin:0}
+.service-text-only{display:flex;align-items:center;gap:18px;min-height:220px;padding:26px}
+.service-text-only .service-copy{padding:0}
+.service-icon{font-size:3rem;flex:0 0 auto}
+
+/* Live search hub */
+.live-search-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:34px 0}
+.live-search-card{background:#fff;border:1px solid rgba(216,178,76,.4);border-radius:24px;padding:28px 22px;box-shadow:0 10px 28px rgba(35,10,45,.09)}
+.live-search-card h3{color:var(--purple);margin:.35rem 0}
+.live-search-card p{min-height:3.2em}
+.live-search-icon{font-size:2.2rem}
+.live-search-button{margin-top:8px}
+.travelpayouts-ready{margin-top:34px}
+@media(max-width:850px){.unified-services,.live-search-grid{grid-template-columns:1fr}.service-text-only{min-height:auto}}
