@@ -4,10 +4,10 @@
 
    LIVE DATA SWAP POINTS:
    1) Travel Search:
-      The live buttons in index.html currently open Google Flights,
-      Google Hotels, and KAYAK Cars. The #third-party-travel-widget
-      block is reserved for the future Oasis Travelpayouts White Label.
-      Paste only the user's own Travelpayouts embed code/partner marker.
+      The live buttons in index.html open Google Flights, Google Hotels,
+      and KAYAK Cars in new tabs. The #third-party-travel-widget mount
+      remains staged for the future Oasis Travelpayouts White Label.
+      Paste only Michelle's own partner/publisher embed code there.
 
    2) Lead Capture Form:
       The form submits directly to FormSubmit and emails Michelle at
@@ -31,6 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatForm = document.getElementById("aiChatForm");
   const chatInput = document.getElementById("aiChatInput");
   const messageLog = document.getElementById("aiMessageLog");
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("submitted") === "1" && formStatus) {
+    formStatus.textContent = "💜 Thank you! Your Oasis World TVL inquiry was submitted. Michelle will follow up with you.";
+  }
 
   function scrollToLeadForm(prefillText = "") {
     if (prefillText && tripDetails) {
