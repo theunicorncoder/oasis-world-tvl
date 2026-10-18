@@ -269,3 +269,121 @@ footer p{margin:0}
   .special-trip-card{align-items:flex-start}
   #aiChatToggle{font-size:.88rem!important;padding:.65rem 1rem!important}
 }
+
+
+/* =========================================================
+   FINAL POLISH PASS
+   ========================================================= */
+
+/* Hero readability: stronger contrast without hiding the artwork */
+.hero-with-image{
+  position:relative;
+}
+.hero-with-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(24,3,34,.18) 0%,
+    rgba(24,3,34,.32) 38%,
+    rgba(24,3,34,.50) 100%
+  );
+  pointer-events:none;
+}
+.hero-copy{
+  position:relative;
+  z-index:2;
+  padding:28px 30px;
+  border-radius:30px;
+  background:rgba(33,5,47,.22);
+  backdrop-filter:blur(1.5px);
+  -webkit-backdrop-filter:blur(1.5px);
+  box-shadow:0 18px 50px rgba(18,2,27,.16);
+}
+.hero h1{
+  color:#fff;
+  text-shadow:
+    0 2px 3px rgba(33,5,47,.95),
+    0 4px 18px rgba(33,5,47,.8);
+}
+.hero .lead,
+.hero .eyebrow{
+  text-shadow:0 2px 8px rgba(33,5,47,.9);
+}
+
+/* All six services now live in one unified grid */
+.service-feature-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  min-height:100%;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(243,221,160,.34),transparent 28%),
+    linear-gradient(145deg,#fffaf4,#f7edf9);
+}
+.service-feature-visual{
+  min-height:260px;
+  display:grid;
+  place-items:center;
+  font-size:5rem;
+  background:
+    linear-gradient(180deg,rgba(90,26,118,.06),rgba(90,26,118,.14)),
+    radial-gradient(circle at center,rgba(216,178,76,.25),transparent 55%);
+  border-bottom:1px solid rgba(216,178,76,.28);
+}
+
+/* Promotional banners: compact and responsive */
+.service-banner-wrap{
+  margin-top:22px;
+  border-radius:24px;
+}
+.service-banner{
+  width:100%;
+  max-height:440px;
+  object-fit:cover;
+  object-position:center;
+}
+.cta-banner-wrap .service-banner{
+  max-height:420px;
+}
+.services{
+  padding-bottom:64px;
+}
+
+@media(max-width:900px){
+  .hero-copy{
+    padding:26px 22px;
+    margin:0 14px;
+  }
+  .service-feature-visual{
+    min-height:220px;
+  }
+  .service-banner{
+    max-height:340px;
+  }
+  .cta-banner-wrap .service-banner{
+    max-height:320px;
+  }
+}
+
+@media(max-width:600px){
+  .hero-copy{
+    padding:22px 18px;
+    border-radius:22px;
+  }
+  .service-banner-wrap{
+    margin-top:18px;
+    border-radius:20px;
+  }
+  .service-banner{
+    max-height:260px;
+  }
+  .cta-banner-wrap .service-banner{
+    max-height:245px;
+  }
+  .service-feature-visual{
+    min-height:180px;
+    font-size:4rem;
+  }
+}
