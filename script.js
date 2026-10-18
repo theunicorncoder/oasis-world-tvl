@@ -10,8 +10,8 @@
       Paste only the user's own Travelpayouts embed code/partner marker.
 
    2) Lead Capture Form:
-      Replace the demo submit handler below with your Jotform,
-      CRM, Formspree, Cloudflare Worker, or custom API endpoint.
+      The form submits directly to FormSubmit and emails Michelle at
+      oasisworldtvl@gmail.com, including the uploaded screenshot/itinerary.
 
    3) AI Concierge:
       Replace getSimulatedAIReply() with a secure server-side
@@ -66,21 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------------------------------------------------------
-  // LEAD FORM DEMO SUBMISSION
-  // Replace this block later with your live form endpoint.
+  // LIVE FORM SUBMISSION
+  // Native browser submission now posts directly to FormSubmit.
+  // Do not preventDefault here, or the email/file upload will not send.
   // ---------------------------------------------------------
-  leadForm?.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    formStatus.textContent =
-      "💜 Your trip details are staged, including any selected screenshot. Live delivery to Michelle still needs the form backend connected.";
-
-    // FUTURE LIVE FORM EXAMPLE:
-    // const formData = new FormData(leadForm);
-    // fetch("YOUR_LIVE_ENDPOINT", { method: "POST", body: formData })
-    //   .then(...)
-    //   .catch(...);
-  });
 
   function setChatOpen(open) {
     if (!chatPanel || !chatToggle) return;
