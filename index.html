@@ -18,7 +18,7 @@
 
 <body>
   <header class="topbar">
-    <a class="brand" href="#home">Oasis World TVL</a>
+    <a class="brand brand-with-logo" href="#home"><img src="oasis-world-tvl-logo.png" alt="Oasis World TVL logo"><span class="sr-only">Oasis World TVL</span></a>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -29,7 +29,7 @@
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <section id="home" class="hero hero-with-image">
       <div class="hero-copy">
         <p class="eyebrow">Independent Travel Planning • 30+ Years Experience</p>
         <h1>Your extraordinary escape begins here.</h1>
@@ -42,7 +42,7 @@
     </section>
 
     <section id="about" class="section about">
-      <div class="profile-placeholder" aria-label="Michelle Baker profile image placeholder">MB</div>
+      <img class="profile-photo" src="michelle-profile.jpg" alt="Michelle Baker, Oasis World TVL">
       <div>
         <p class="kicker">Meet Michelle</p>
         <h2>Hi, I’m Michelle Baker! ✈️🌴</h2>
@@ -65,13 +65,22 @@
         <article class="card"><span>👨‍👩‍👧‍👦</span><h3>Family & Group Travel</h3><p>Thoughtful planning for couples, families, friends, organizations, and groups traveling together.</p></article>
       </div>
 
-      <!--
-        APPROVED OASIS WORLD TVL SERVICE IMAGE SET:
-        Cruises, All-Inclusive Escapes, Flights/Hotels/Cars, Travel Concierge,
-        plus the wide Cruise Into Your Next Chapter banner.
-        Once the final image files are uploaded to /assets in this repository,
-        add their <img> elements here or replace cards above with image cards.
-      -->
+      <div class="service-gallery" aria-label="Oasis World TVL travel services">
+        <figure><img src="oasis-cruises.png" alt="Oasis World TVL Cruises"><figcaption>Cruises</figcaption></figure>
+        <figure><img src="oasis-all-inclusive-escapes.png" alt="Oasis World TVL All-Inclusive Escapes"><figcaption>All-Inclusive Escapes</figcaption></figure>
+        <figure><img src="oasis-flights-hotels-cars.png" alt="Oasis World TVL Flights Hotels Cars"><figcaption>Flights • Hotels • Cars</figcaption></figure>
+        <figure><img src="oasis-travel-concierge.png" alt="Oasis World TVL Travel Concierge"><figcaption>Travel Concierge</figcaption></figure>
+      </div>
+
+      <div class="service-banner-wrap">
+        <img class="service-banner" src="oasis-cruise-next-chapter-banner.png" alt="Cruise into your next chapter with Oasis World TVL">
+      </div>
+
+      <div class="service-banner-wrap">
+        <a href="#lead-form" class="banner-link" aria-label="Start planning your extraordinary escape">
+          <img class="service-banner" src="oasis-extraordinary-escape-banner.png" alt="Start Planning Your Extraordinary Escape with Oasis World TVL">
+        </a>
+      </div>
     </section>
 
     <!-- ============================================================
