@@ -71,7 +71,7 @@
       <h2>Send Michelle your travel details.</h2>
       <p class="section-intro">Share what you found—or tell us what you’re imagining—and Oasis World TVL will follow up to help turn the idea into a real itinerary.</p>
 
-      <form id="oasisLeadForm" class="lead-form">
+      <form id="oasisLeadForm" class="lead-form" action="https://formsubmit.co/oasisworldtvl@gmail.com" method="POST" enctype="multipart/form-data">
         <div class="form-row">
           <label>
             Name
@@ -121,10 +121,16 @@
         </label>
 
         <!--
-          FORM ACTION PLACEHOLDER:
-          This button currently triggers a frontend demo confirmation only.
-          Connect the form to a real Jotform/CRM/API endpoint in script.js later.
+          FORMSUBMIT CONFIGURATION
+          Free email delivery to oasisworldtvl@gmail.com.
+          First submission triggers a one-time activation email from FormSubmit.
         -->
+        <input type="hidden" name="_subject" value="New Oasis World TVL Travel Inquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://oasis-world-tvl.theemmerreliford.workers.dev/#lead-form">
+        <input type="text" name="_honey" style="display:none">
+
         <button class="button form-submit" type="submit">Send My Trip Details</button>
 
         <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
