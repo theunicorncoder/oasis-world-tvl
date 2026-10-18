@@ -31,3 +31,19 @@
 footer{padding:30px 7%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#16031f;color:#fff}footer span{display:block;opacity:.8;font-size:.9rem}footer p{margin:0}
 
 @media(max-width:850px){.topbar nav{display:none}.about{grid-template-columns:1fr;text-align:center}.cards,.contact-grid,.form-row{grid-template-columns:1fr}.hero{min-height:68vh}.lead-form{padding:22px}.travel-widget-placeholder{min-height:280px;padding:28px 18px}}
+
+/* Approved Oasis World TVL visual assets */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.brand-with-logo img{display:block;height:44px;width:auto;max-width:230px;object-fit:contain}
+.hero-with-image{background:
+linear-gradient(180deg,rgba(33,5,47,.46),rgba(33,5,47,.78)),
+url("oasis-world-tvl-hero.jpg") center/cover no-repeat}
+.profile-photo{width:280px;height:280px;border-radius:50%;object-fit:cover;margin:auto;border:8px solid var(--gold);box-shadow:0 18px 45px rgba(75,18,105,.22)}
+.service-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:42px}
+.service-gallery figure{margin:0;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 34px rgba(35,10,45,.12);border:1px solid rgba(216,178,76,.35)}
+.service-gallery img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.service-gallery figcaption{padding:14px 18px;font-weight:800;color:var(--purple);font-size:1.05rem}
+.service-banner-wrap{margin-top:30px;border-radius:28px;overflow:hidden;box-shadow:0 14px 38px rgba(35,10,45,.13)}
+.service-banner{display:block;width:100%;height:auto}
+.banner-link{display:block}
+@media(max-width:720px){.service-gallery{grid-template-columns:1fr}.brand-with-logo img{height:36px;max-width:190px}.profile-photo{width:240px;height:240px}}
