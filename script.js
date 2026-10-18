@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const leadForm = document.getElementById("oasisLeadForm");
   const formStatus = document.getElementById("formStatus");
   const tripDetails = document.getElementById("tripDetails");
+  const tripScreenshot = document.getElementById("tripScreenshot");
+  const uploadFileName = document.getElementById("uploadFileName");
 
   const chatToggle = document.getElementById("aiChatToggle");
   const chatPanel = document.getElementById("aiChatPanel");
@@ -56,6 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  tripScreenshot?.addEventListener("change", () => {
+    const file = tripScreenshot.files?.[0];
+    if (uploadFileName) {
+      uploadFileName.textContent = file ? "Selected: " + file.name : "";
+    }
+  });
+
   // ---------------------------------------------------------
   // LEAD FORM DEMO SUBMISSION
   // Replace this block later with your live form endpoint.
@@ -64,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     formStatus.textContent =
-      "💜 Thanks! Your trip details are ready for the Oasis World TVL team. Live form delivery will be connected next.";
+      "💜 Your trip details are staged, including any selected screenshot. Live delivery to Michelle still needs the form backend connected.";
 
     // FUTURE LIVE FORM EXAMPLE:
     // const formData = new FormData(leadForm);
