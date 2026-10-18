@@ -69,3 +69,105 @@ url("oasis-world-tvl-hero.jpg") center/cover no-repeat}
 .live-search-button{margin-top:8px}
 .travelpayouts-ready{margin-top:34px}
 @media(max-width:850px){.unified-services,.live-search-grid{grid-template-columns:1fr}.service-text-only{min-height:auto}}
+
+
+/* =========================================================
+   OASIS WORLD TVL — LUXURY TYPOGRAPHY REFRESH
+   ========================================================= */
+:root{
+  --script-font:"Allura",cursive;
+  --display-font:"Cormorant Garamond",Georgia,serif;
+  --body-font:"Libre Baskerville",Georgia,serif;
+}
+
+body{
+  font-family:var(--body-font);
+}
+
+.topbar,
+.topbar nav a,
+.button,
+.contact-card,
+.live-search-card,
+.lead-form{
+  font-family:var(--body-font);
+}
+
+.brand-with-logo{
+  display:flex;
+  align-items:center;
+}
+
+.hero h1,
+.section h2,
+.services h2,
+.travel-search-section h2,
+.lead-section h2,
+.contact h2,
+.why h2{
+  font-family:var(--script-font);
+  color:var(--purple);
+  font-weight:400;
+  letter-spacing:.01em;
+  line-height:.95;
+  text-shadow:0 1px 0 rgba(216,178,76,.25);
+}
+
+.hero h1{
+  color:#f2d7ff;
+  font-size:clamp(4rem,9vw,8.2rem);
+  max-width:980px;
+  margin:.12em auto .15em;
+  text-shadow:
+    0 2px 0 rgba(33,5,47,.5),
+    0 4px 18px rgba(33,5,47,.45);
+}
+
+.hero .eyebrow,
+.kicker{
+  font-family:var(--display-font);
+  font-weight:700;
+  letter-spacing:.16em;
+}
+
+.lead,
+.section-intro,
+.card p,
+.service-copy p,
+.live-search-card p,
+.contact-card,
+.lead-form{
+  font-family:var(--body-font);
+}
+
+.service-copy h3,
+.live-search-card h3,
+.card h3,
+.contact-card strong,
+.signature{
+  font-family:var(--display-font);
+  color:var(--purple);
+  font-weight:700;
+}
+
+.topbar nav a{
+  font-family:var(--display-font);
+  font-size:1.08rem;
+  font-weight:700;
+}
+
+.button{
+  font-family:var(--display-font);
+  font-size:1.05rem;
+  font-weight:700;
+}
+
+.signature{
+  font-size:1.4rem;
+}
+
+@media(max-width:850px){
+  .hero h1{
+    font-size:clamp(3.2rem,15vw,5.4rem);
+  }
+}
