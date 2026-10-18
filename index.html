@@ -55,21 +55,56 @@
     <section id="services" class="section services">
       <p class="kicker">Travel Your Way</p>
       <h2>What can we plan together?</h2>
+      <p class="section-intro">Choose the kind of getaway you have in mind, then use our live search tools to compare options before sending your favorites to Michelle.</p>
 
-      <div class="cards">
-        <article class="card"><span>💎</span><h3>Cruises & Group Cruises</h3><p>Ocean escapes, first-time cruises, family sailings, milestone trips, and group experiences.</p></article>
-        <article class="card"><span>🌴</span><h3>All-Inclusive Escapes</h3><p>Relaxing resort getaways for romance, rest, celebration, sunshine, and easy vacationing.</p></article>
-        <article class="card"><span>✈️</span><h3>Flights • Hotels • Cars</h3><p>The travel essentials coordinated into one clear plan, whether you're going near or far.</p></article>
-        <article class="card"><span>🎵</span><h3>Travel Concierge</h3><p>Concerts, shows, lodging, and trip extras that turn a getaway into an experience.</p></article>
-        <article class="card"><span>🎉</span><h3>Celebration Trips</h3><p>Birthdays, anniversaries, reunions, girls' trips, romantic getaways, and special occasions.</p></article>
-        <article class="card"><span>👨‍👩‍👧‍👦</span><h3>Family & Group Travel</h3><p>Thoughtful planning for couples, families, friends, organizations, and groups traveling together.</p></article>
-      </div>
+      <div class="service-gallery unified-services">
+        <article class="service-image-card">
+          <img src="oasis-cruises.png" alt="Oasis World TVL Cruises">
+          <div class="service-copy">
+            <h3>Cruises & Group Cruises</h3>
+            <p>Ocean escapes, first-time cruises, family sailings, milestone trips, and group experiences.</p>
+          </div>
+        </article>
 
-      <div class="service-gallery" aria-label="Oasis World TVL travel services">
-        <figure><img src="oasis-cruises.png" alt="Oasis World TVL Cruises"><figcaption>Cruises</figcaption></figure>
-        <figure><img src="oasis-all-inclusive-escapes.png" alt="Oasis World TVL All-Inclusive Escapes"><figcaption>All-Inclusive Escapes</figcaption></figure>
-        <figure><img src="oasis-flights-hotels-cars.png" alt="Oasis World TVL Flights Hotels Cars"><figcaption>Flights • Hotels • Cars</figcaption></figure>
-        <figure><img src="oasis-travel-concierge.png" alt="Oasis World TVL Travel Concierge"><figcaption>Travel Concierge</figcaption></figure>
+        <article class="service-image-card">
+          <img src="oasis-all-inclusive-escapes.png" alt="Oasis World TVL All-Inclusive Escapes">
+          <div class="service-copy">
+            <h3>All-Inclusive Escapes</h3>
+            <p>Relaxing resort getaways for romance, rest, celebration, sunshine, and easy vacationing.</p>
+          </div>
+        </article>
+
+        <article class="service-image-card">
+          <img src="oasis-flights-hotels-cars.png" alt="Oasis World TVL Flights Hotels Cars">
+          <div class="service-copy">
+            <h3>Flights • Hotels • Cars</h3>
+            <p>The travel essentials coordinated into one clear plan, whether you’re going near or far.</p>
+          </div>
+        </article>
+
+        <article class="service-image-card">
+          <img src="oasis-travel-concierge.png" alt="Oasis World TVL Travel Concierge">
+          <div class="service-copy">
+            <h3>Travel Concierge</h3>
+            <p>Concerts, shows, lodging, and trip extras that turn a getaway into an experience.</p>
+          </div>
+        </article>
+
+        <article class="service-image-card service-text-only">
+          <div class="service-icon">🎉</div>
+          <div class="service-copy">
+            <h3>Celebration Trips</h3>
+            <p>Birthdays, anniversaries, reunions, girls’ trips, romantic getaways, and special occasions.</p>
+          </div>
+        </article>
+
+        <article class="service-image-card service-text-only">
+          <div class="service-icon">👨‍👩‍👧‍👦</div>
+          <div class="service-copy">
+            <h3>Family & Group Travel</h3>
+            <p>Thoughtful planning for couples, families, friends, organizations, and groups traveling together.</p>
+          </div>
+        </article>
       </div>
 
       <div class="service-banner-wrap">
@@ -84,7 +119,11 @@
     </section>
 
     <!-- ============================================================
-         TRADITIONAL TRAVEL SEARCH ENGINE
+         LIVE TRAVEL SEARCH HUB
+         These buttons open real public travel search engines today.
+         Travelpayouts white-label can replace this section later once
+         the Oasis account/widget code (partner marker) is available.
+    ============================================================= -->
          ============================================================
          LATER: paste the third-party white-label travel widget script
          (for example Travelpayouts or another approved supplier) inside
@@ -92,29 +131,48 @@
          so our Oasis branding remains consistent.
     ============================================================= -->
     <section id="travel-search" class="section travel-search-section">
-      <p class="kicker">Search Your Options</p>
-      <h2>Explore flights, stays, cars & more.</h2>
-      <p class="section-intro">Use the search window to explore possibilities, then send your favorite itinerary to Michelle so the Oasis team can help you move forward.</p>
+      <p class="kicker">Live Travel Search</p>
+      <h2>Search real travel options now.</h2>
+      <p class="section-intro">Use one of the live search engines below to compare current options. When you find something you like, come back and send the details to Michelle so Oasis World TVL can help you move forward.</p>
 
-      <div class="travel-widget-shell">
-        <div id="third-party-travel-widget" class="travel-widget-placeholder" aria-label="Travel search widget placeholder">
+      <div class="live-search-grid">
+        <article class="live-search-card">
+          <div class="live-search-icon">✈️</div>
+          <h3>Search Flights</h3>
+          <p>Compare live flight options and schedules.</p>
+          <a class="button live-search-button" href="https://www.google.com/travel/flights" target="_blank" rel="noopener noreferrer">Open Google Flights</a>
+        </article>
+
+        <article class="live-search-card">
+          <div class="live-search-icon">🏨</div>
+          <h3>Search Hotels</h3>
+          <p>Explore current hotel and lodging availability.</p>
+          <a class="button live-search-button" href="https://www.google.com/travel/hotels" target="_blank" rel="noopener noreferrer">Open Google Hotels</a>
+        </article>
+
+        <article class="live-search-card">
+          <div class="live-search-icon">🚗</div>
+          <h3>Search Rental Cars</h3>
+          <p>Compare rental-car offers across multiple providers.</p>
+          <a class="button live-search-button" href="https://www.kayak.com/cars" target="_blank" rel="noopener noreferrer">Open KAYAK Cars</a>
+        </article>
+      </div>
+
+      <div class="travel-widget-shell travelpayouts-ready">
+        <div id="third-party-travel-widget" class="travel-widget-placeholder" aria-label="White-label travel search widget placeholder">
           <!--
-            THIRD-PARTY WHITE-LABEL WIDGET PLACEHOLDER
+            TRAVELPAYOUTS WHITE-LABEL INSERTION POINT
             --------------------------------------------------------
-            Paste the provider's real embed <script>, <iframe>, or widget
-            container here later.
-
-            Example future integration:
-            <script src="YOUR_PROVIDER_WIDGET_URL"></script>
-
-            IMPORTANT:
-            Do not remove id="third-party-travel-widget" unless the
-            provider requires a different mount ID.
+            When the Oasis World TVL Travelpayouts account is ready:
+            1) Copy the exact Widget-type White Label code from Travelpayouts.
+            2) Paste the widget/search-result code here.
+            3) If Travelpayouts supplies a HEAD script, place that in <head>.
+            4) Do not reuse another publisher's partner marker / shmarker.
           -->
-          <div class="placeholder-icon">✈️</div>
-          <h3>Travel Search Engine Coming Here</h3>
-          <p>Flights • Hotels • Cars • Vacation Options</p>
-          <small>White-label search feed placeholder</small>
+          <div class="placeholder-icon">💜</div>
+          <h3>Oasis White-Label Booking Search</h3>
+          <p>Ready for the Travelpayouts widget code when your account is connected.</p>
+          <small>Flights • Hotels • additional travel programs</small>
         </div>
       </div>
 
