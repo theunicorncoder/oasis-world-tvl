@@ -3,9 +3,11 @@
    =========================================================
 
    LIVE DATA SWAP POINTS:
-   1) Travel Search Widget:
-      Paste the third-party white-label script/iframe into
-      #third-party-travel-widget in index.html.
+   1) Travel Search:
+      The live buttons in index.html currently open Google Flights,
+      Google Hotels, and KAYAK Cars. The #third-party-travel-widget
+      block is reserved for the future Oasis Travelpayouts White Label.
+      Paste only the user's own Travelpayouts embed code/partner marker.
 
    2) Lead Capture Form:
       Replace the demo submit handler below with your Jotform,
