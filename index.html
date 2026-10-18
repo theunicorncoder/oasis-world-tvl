@@ -5,16 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Oasis World TVL — independent travel planning with Michelle Baker. Cruises, all-inclusive escapes, family trips, celebration travel, flights, hotels, cars, and concierge experiences.">
   <title>Oasis World TVL | Michelle Baker</title>
+
   <link rel="stylesheet" href="styles.css">
+
+  <!--
+    TAILWIND NOTE:
+    The AI Concierge uses Tailwind utility classes for its fixed/floating layout.
+    For a production build later, replace this CDN with a compiled Tailwind build if desired.
+  -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
   <header class="topbar">
     <a class="brand" href="#home">Oasis World TVL</a>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#travel-search">Search Travel</a>
       <a href="#why">Why Oasis</a>
-      <a href="#contact">Contact</a>
+      <a href="#lead-form">Plan My Trip</a>
     </nav>
   </header>
 
@@ -25,7 +35,7 @@
         <h1>Your extraordinary escape begins here.</h1>
         <p class="lead">Cruises, all-inclusive getaways, family vacations, celebration trips, flights, hotels, cars, and concierge-style travel planning — all with Michelle's personal touch.</p>
         <div class="hero-actions">
-          <a class="button" href="#contact">Start Planning</a>
+          <a class="button" href="#lead-form">Start Planning</a>
           <a class="button ghost" href="#services">Explore Services</a>
         </div>
       </div>
@@ -45,6 +55,7 @@
     <section id="services" class="section services">
       <p class="kicker">Travel Your Way</p>
       <h2>What can we plan together?</h2>
+
       <div class="cards">
         <article class="card"><span>💎</span><h3>Cruises & Group Cruises</h3><p>Ocean escapes, first-time cruises, family sailings, milestone trips, and group experiences.</p></article>
         <article class="card"><span>🌴</span><h3>All-Inclusive Escapes</h3><p>Relaxing resort getaways for romance, rest, celebration, sunshine, and easy vacationing.</p></article>
@@ -53,6 +64,54 @@
         <article class="card"><span>🎉</span><h3>Celebration Trips</h3><p>Birthdays, anniversaries, reunions, girls' trips, romantic getaways, and special occasions.</p></article>
         <article class="card"><span>👨‍👩‍👧‍👦</span><h3>Family & Group Travel</h3><p>Thoughtful planning for couples, families, friends, organizations, and groups traveling together.</p></article>
       </div>
+
+      <!--
+        APPROVED OASIS WORLD TVL SERVICE IMAGE SET:
+        Cruises, All-Inclusive Escapes, Flights/Hotels/Cars, Travel Concierge,
+        plus the wide Cruise Into Your Next Chapter banner.
+        Once the final image files are uploaded to /assets in this repository,
+        add their <img> elements here or replace cards above with image cards.
+      -->
+    </section>
+
+    <!-- ============================================================
+         TRADITIONAL TRAVEL SEARCH ENGINE
+         ============================================================
+         LATER: paste the third-party white-label travel widget script
+         (for example Travelpayouts or another approved supplier) inside
+         the placeholder div below. Keep the surrounding section intact
+         so our Oasis branding remains consistent.
+    ============================================================= -->
+    <section id="travel-search" class="section travel-search-section">
+      <p class="kicker">Search Your Options</p>
+      <h2>Explore flights, stays, cars & more.</h2>
+      <p class="section-intro">Use the search window to explore possibilities, then send your favorite itinerary to Michelle so the Oasis team can help you move forward.</p>
+
+      <div class="travel-widget-shell">
+        <div id="third-party-travel-widget" class="travel-widget-placeholder" aria-label="Travel search widget placeholder">
+          <!--
+            THIRD-PARTY WHITE-LABEL WIDGET PLACEHOLDER
+            --------------------------------------------------------
+            Paste the provider's real embed <script>, <iframe>, or widget
+            container here later.
+
+            Example future integration:
+            <script src="YOUR_PROVIDER_WIDGET_URL"></script>
+
+            IMPORTANT:
+            Do not remove id="third-party-travel-widget" unless the
+            provider requires a different mount ID.
+          -->
+          <div class="placeholder-icon">✈️</div>
+          <h3>Travel Search Engine Coming Here</h3>
+          <p>Flights • Hotels • Cars • Vacation Options</p>
+          <small>White-label search feed placeholder</small>
+        </div>
+      </div>
+
+      <a class="button search-to-form" href="#lead-form">
+        Found the perfect itinerary? Click here to secure your booking context with our team.
+      </a>
     </section>
 
     <section id="why" class="why">
@@ -69,16 +128,85 @@
       </div>
     </section>
 
+    <!-- ============================================================
+         LEAD CAPTURE FORM
+         This is the FINAL DESTINATION for BOTH:
+         1) the travel-search CTA above, and
+         2) the AI Concierge routing link.
+         ============================================================
+         LATER: replace the demo submit behavior in script.js with:
+         - Jotform
+         - Formspree
+         - HubSpot
+         - your CRM/API endpoint
+         - or a serverless Cloudflare Worker endpoint.
+    ============================================================= -->
+    <section id="lead-form" class="section lead-section">
+      <p class="kicker">Let’s Lock In Your Trip</p>
+      <h2>Send Michelle your travel details.</h2>
+      <p class="section-intro">Share what you found—or tell us what you’re imagining—and Oasis World TVL will follow up to help turn the idea into a real itinerary.</p>
+
+      <form id="oasisLeadForm" class="lead-form">
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            Trip Type
+            <select name="tripType">
+              <option value="">Choose one</option>
+              <option>Cruise</option>
+              <option>All-Inclusive Escape</option>
+              <option>Flights / Hotels / Cars</option>
+              <option>Travel Concierge</option>
+              <option>Family or Group Travel</option>
+              <option>Celebration Trip</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Search / Trip Details
+          <textarea id="tripDetails" name="tripDetails" rows="7" placeholder="Paste a flight, hotel, cruise, destination, travel dates, budget, or any trip ideas you want Michelle to review." required></textarea>
+        </label>
+
+        <label class="consent-line">
+          <input type="checkbox" name="consent" required>
+          <span>I agree to be contacted by Michelle Baker / Oasis World TVL regarding my travel inquiry.</span>
+        </label>
+
+        <!--
+          FORM ACTION PLACEHOLDER:
+          This button currently triggers a frontend demo confirmation only.
+          Connect the form to a real Jotform/CRM/API endpoint in script.js later.
+        -->
+        <button class="button form-submit" type="submit">Send My Trip Details</button>
+
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
     <section id="contact" class="section contact">
-      <p class="kicker">Ready to Travel?</p>
-      <h2>Start planning your extraordinary escape.</h2>
-      <p>Reach out to Michelle directly and tell her what you’re dreaming about.</p>
+      <p class="kicker">Prefer to Reach Out Directly?</p>
+      <h2>Michelle is just a message away.</h2>
       <div class="contact-grid">
         <a class="contact-card" href="mailto:oasisworldtvl@gmail.com"><span>✉️</span><strong>Email Michelle</strong><small>oasisworldtvl@gmail.com</small></a>
         <a class="contact-card" href="tel:8153024824"><span>📞</span><strong>Call Michelle</strong><small>(815) 302-4824</small></a>
         <a class="contact-card" href="sms:8153024824"><span>💬</span><strong>Text Michelle</strong><small>(815) 302-4824</small></a>
       </div>
-      <div class="coming-soon"><strong>Travel Inquiry Form:</strong> Coming Soon</div>
     </section>
   </main>
 
@@ -86,5 +214,40 @@
     <div><strong>Oasis World TVL</strong><span>Michelle Baker • The Inspirational Vitamin</span></div>
     <p>Your extraordinary escape begins here.</p>
   </footer>
+
+  <!-- ============================================================
+       FLOATING AI CONCIERGE
+       Tailwind utility classes control the fixed bottom-right layout.
+       The bot is currently a FRONTEND SIMULATION ONLY.
+       Replace the mock response in script.js with a live AI endpoint later.
+  ============================================================= -->
+  <div id="aiConciergeRoot" class="fixed bottom-5 right-5 z-[9999] flex flex-col items-end">
+    <div id="aiChatPanel" class="hidden mb-3 w-[min(92vw,380px)] overflow-hidden rounded-3xl border border-[#d8b24c] bg-white shadow-2xl">
+      <div class="flex items-center justify-between bg-[#21052f] px-4 py-3 text-white">
+        <div>
+          <p class="m-0 font-bold">Oasis AI Concierge</p>
+          <p class="m-0 text-xs text-[#f3dda0]">Trip inspiration • Michelle follows up</p>
+        </div>
+        <button id="aiChatClose" type="button" class="rounded-full px-3 py-1 text-xl hover:bg-white/10" aria-label="Close AI Concierge">×</button>
+      </div>
+
+      <div id="aiMessageLog" class="h-72 overflow-y-auto bg-[#fff8f1] p-4 text-sm">
+        <div class="ai-message bot">
+          Hi! 🤖✨ Tell me where you’d love to go, who’s traveling, your dates, and what kind of experience you want. I can help you organize your ideas before Michelle follows up.
+        </div>
+      </div>
+
+      <form id="aiChatForm" class="flex gap-2 border-t border-[#eadfbf] bg-white p-3">
+        <input id="aiChatInput" type="text" class="min-w-0 flex-1 rounded-full border border-[#d8b24c] px-4 py-2 outline-none focus:ring-2 focus:ring-[#5a1a76]" placeholder="Tell me about your trip..." autocomplete="off">
+        <button type="submit" class="rounded-full bg-[#5a1a76] px-4 py-2 font-bold text-white hover:bg-[#441259]">Send</button>
+      </form>
+    </div>
+
+    <button id="aiChatToggle" type="button" class="rounded-full border-2 border-[#d8b24c] bg-[#21052f] px-5 py-3 font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#5a1a76]" aria-expanded="false">
+      🤖 Chat with AI Concierge
+    </button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
