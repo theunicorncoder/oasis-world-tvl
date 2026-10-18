@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Oasis World TVL — independent travel planning with Michelle Baker. Cruises, all-inclusive escapes, family trips, celebration travel, flights, hotels, cars, and concierge experiences.">
+  <meta name="description" content="Oasis World TVL — independent travel planning with Michelle Baker. Cruises, all-inclusive escapes, flights, hotels, cars, concierge experiences, family travel, and celebration trips.">
   <title>Oasis World TVL | Michelle Baker</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,42 +11,180 @@
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <!--
-    TAILWIND NOTE:
-    The AI Concierge uses Tailwind utility classes for its fixed/floating layout.
-    For a production build later, replace this CDN with a compiled Tailwind build if desired.
-  -->
+  <!-- Tailwind is currently used only for the floating AI Concierge shell. -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
   <header class="topbar">
-    <a class="brand brand-with-logo" href="#home"><img src="oasis-world-tvl-logo.png" alt="Oasis World TVL logo"><span class="sr-only">Oasis World TVL</span></a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
+    <a class="brand brand-with-logo" href="#home">
+      <img src="oasis-world-tvl-logo.png" alt="Oasis World TVL">
+      <span class="sr-only">Oasis World TVL</span>
+    </a>
+
+    <nav aria-label="Primary navigation">
       <a href="#travel-search">Search Travel</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
       <a href="#why">Why Oasis</a>
       <a href="#lead-form">Plan My Trip</a>
     </nav>
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="home" class="hero hero-with-image">
       <div class="hero-copy">
         <p class="eyebrow">Independent Travel Planning • 30+ Years Experience</p>
         <h1>Your extraordinary escape begins here.</h1>
-        <p class="lead">Cruises, all-inclusive getaways, family vacations, celebration trips, flights, hotels, cars, and concierge-style travel planning — all with Michelle's personal touch.</p>
+        <p class="lead">Cruises, all-inclusive getaways, family vacations, celebration trips, flights, hotels, cars, and concierge-style planning — all with Michelle’s personal touch.</p>
+
         <div class="hero-actions">
-          <a class="button" href="#lead-form">Start Planning</a>
-          <a class="button ghost" href="#services">Explore Services</a>
+          <a class="button" href="#travel-search">Search Travel</a>
+          <a class="button ghost" href="#lead-form">Start Planning</a>
         </div>
       </div>
     </section>
 
+    <!-- LIVE SEARCH: intentionally near the top of the page -->
+    <section id="travel-search" class="section travel-search-section">
+      <p class="kicker">Search First. Plan Smarter.</p>
+      <h2>Explore real travel options.</h2>
+      <p class="section-intro">Use these live public search tools to compare current options. When you find something you like, take a screenshot or copy the itinerary details and send them to Michelle through the Oasis inquiry form.</p>
 
+      <div class="live-search-grid">
+        <article class="live-search-card">
+          <div class="live-search-icon">✈️</div>
+          <h3>Flights</h3>
+          <p>Compare current flight schedules, routes, and fares.</p>
+          <a class="button live-search-button" href="https://www.google.com/travel/flights" target="_blank" rel="noopener noreferrer">Search Google Flights</a>
+        </article>
 
+        <article class="live-search-card">
+          <div class="live-search-icon">🏨</div>
+          <h3>Hotels</h3>
+          <p>Browse current hotel options and lodging availability.</p>
+          <a class="button live-search-button" href="https://www.google.com/travel/hotels" target="_blank" rel="noopener noreferrer">Search Google Hotels</a>
+        </article>
 
+        <article class="live-search-card">
+          <div class="live-search-icon">🚗</div>
+          <h3>Rental Cars</h3>
+          <p>Compare rental-car offers from multiple providers.</p>
+          <a class="button live-search-button" href="https://www.kayak.com/cars" target="_blank" rel="noopener noreferrer">Search KAYAK Cars</a>
+        </article>
+      </div>
+
+      <div class="search-workflow">
+        <h3>Found something you like?</h3>
+        <div class="workflow-steps">
+          <div><strong>1.</strong> Find the flight, hotel, car, cruise, or itinerary you prefer.</div>
+          <div><strong>2.</strong> Screenshot it or copy the important details.</div>
+          <div><strong>3.</strong> Upload or paste it into the Oasis inquiry form for Michelle.</div>
+        </div>
+        <a class="button search-to-form" href="#lead-form">I found an option — send it to Michelle</a>
+      </div>
+
+      <!-- ==========================================================
+           TRAVELPAYOUTS WHITE-LABEL STAGING AREA
+           Keep this mount point in the page. When Michelle's own
+           Travelpayouts publisher/partner ID and widget code are ready,
+           paste the account-specific embed inside #third-party-travel-widget.
+           Do not use another publisher's marker or tracking ID.
+      =========================================================== -->
+      <div id="third-party-travel-widget" class="white-label-stage" aria-label="Future Oasis World TVL embedded booking search">
+        <span class="white-label-badge">Coming Soon</span>
+        <div>
+          <h3>Oasis Embedded Booking Search</h3>
+          <p>This space is ready for the Oasis World TVL Travelpayouts White Label so future visitors can search without leaving the site.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <img class="profile-photo" src="michelle-profile.jpg" alt="Michelle Baker, Oasis World TVL">
+      <div>
+        <p class="kicker">Meet Michelle</p>
+        <h2>Hi, I’m Michelle Baker! ✈️🌴</h2>
+        <p>For more than <strong>30 years</strong>, I’ve been helping travelers turn <em>“I need a vacation!”</em> into unforgettable experiences. 💜</p>
+        <p>Whether you’re ready to cruise into your next chapter, relax at an all-inclusive resort, plan a family getaway, or put together the perfect weekend escape, I’m here to make planning easier, more personal, and a lot more fun.</p>
+        <p class="signature">You dream it. I’ll help you plan it.</p>
+      </div>
+    </section>
+
+    <!-- UNIFIED SERVICES -->
+    <section id="services" class="section services">
+      <p class="kicker">Travel Your Way</p>
+      <h2>What can we plan together?</h2>
+      <p class="section-intro">Choose the kind of getaway you have in mind. Each service can flow directly into a personalized planning request with Michelle.</p>
+
+      <div class="service-gallery unified-services">
+        <article class="service-image-card">
+          <img src="oasis-cruises.png" alt="Oasis World TVL Cruises">
+          <div class="service-copy">
+            <h3>Cruises & Group Cruises</h3>
+            <p>Ocean escapes, first-time cruises, family sailings, milestone trips, and group experiences.</p>
+          </div>
+        </article>
+
+        <article class="service-image-card">
+          <img src="oasis-all-inclusive-escapes.png" alt="Oasis World TVL All-Inclusive Escapes">
+          <div class="service-copy">
+            <h3>All-Inclusive Getaways</h3>
+            <p>Relaxing resort escapes for romance, rest, celebration, sunshine, and easy vacationing.</p>
+          </div>
+        </article>
+
+        <article class="service-image-card">
+          <img src="oasis-flights-hotels-cars.png" alt="Oasis World TVL Flights Hotels Cars">
+          <div class="service-copy">
+            <h3>Flights • Hotels • Cars</h3>
+            <p>The travel essentials coordinated into one clear plan, whether you’re going near or far.</p>
+          </div>
+        </article>
+
+        <article class="service-image-card">
+          <img src="oasis-travel-concierge.png" alt="Oasis World TVL Concierge Travel Planning">
+          <div class="service-copy">
+            <h3>Concierge Travel Planning</h3>
+            <p>Concerts, shows, lodging, and thoughtful trip extras that turn a getaway into an experience.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="service-banner-wrap">
+        <img class="service-banner" src="oasis-cruise-next-chapter-banner.png" alt="Cruise into your next chapter with Oasis World TVL">
+      </div>
+
+      <div class="service-banner-wrap cta-banner-wrap">
+        <a href="#lead-form" class="banner-link" aria-label="Start planning your extraordinary escape">
+          <img class="service-banner" src="oasis-extraordinary-escape-banner.png" alt="Start Planning Your Extraordinary Escape with Oasis World TVL">
+        </a>
+      </div>
+
+      <!-- These two coordinated cards intentionally sit directly below
+           the Start Planning / Contact Michelle banner. -->
+      <div class="special-trip-grid" aria-label="Additional Oasis World TVL planning services">
+        <article class="special-trip-card">
+          <div class="service-icon">🎉</div>
+          <div>
+            <h3>Celebration Trips</h3>
+            <p>Birthdays, anniversaries, reunions, girls’ trips, romantic getaways, and special occasions.</p>
+          </div>
+        </article>
+
+        <article class="special-trip-card">
+          <div class="service-icon">👨‍👩‍👧‍👦</div>
+          <div>
+            <h3>Family & Group Travel</h3>
+            <p>Thoughtful planning for couples, families, friends, organizations, and groups traveling together.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY OASIS -->
     <section id="why" class="why">
       <div class="section">
         <p class="kicker light">Why Oasis World TVL</p>
@@ -61,15 +199,11 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         LEAD CAPTURE FORM
-         This is the FINAL DESTINATION for BOTH:
-         1) the travel-search CTA above, and
-         2) the AI Concierge routing link.
+    <!-- LEAD CAPTURE / PLAN MY TRIP -->
     <section id="lead-form" class="section lead-section">
-      <p class="kicker">Let’s Lock In Your Trip</p>
-      <h2>Send Michelle your travel details.</h2>
-      <p class="section-intro">Share what you found—or tell us what you’re imagining—and Oasis World TVL will follow up to help turn the idea into a real itinerary.</p>
+      <p class="kicker">Plan My Trip</p>
+      <h2>Send Michelle what you found.</h2>
+      <p class="section-intro">Paste your itinerary details or upload a screenshot of the flight, hotel, rental car, cruise, or travel option you want Michelle to review.</p>
 
       <form id="oasisLeadForm" class="lead-form" action="https://formsubmit.co/oasisworldtvl@gmail.com" method="POST" enctype="multipart/form-data">
         <div class="form-row">
@@ -77,6 +211,7 @@
             Name
             <input type="text" name="name" autocomplete="name" required>
           </label>
+
           <label>
             Email
             <input type="email" name="email" autocomplete="email" required>
@@ -88,14 +223,15 @@
             Phone
             <input type="tel" name="phone" autocomplete="tel" required>
           </label>
+
           <label>
             Trip Type
             <select name="tripType">
               <option value="">Choose one</option>
               <option>Cruise</option>
-              <option>All-Inclusive Escape</option>
+              <option>All-Inclusive Getaway</option>
               <option>Flights / Hotels / Cars</option>
-              <option>Travel Concierge</option>
+              <option>Concierge Travel Planning</option>
               <option>Family or Group Travel</option>
               <option>Celebration Trip</option>
               <option>Not sure yet</option>
@@ -105,7 +241,7 @@
 
         <label>
           Search / Trip Details
-          <textarea id="tripDetails" name="tripDetails" rows="7" placeholder="Paste a flight, hotel, cruise, destination, travel dates, budget, or any trip ideas you want Michelle to review." required></textarea>
+          <textarea id="tripDetails" name="tripDetails" rows="7" placeholder="Paste flight numbers, hotel name, dates, destination, price, cruise details, budget, or anything else you want Michelle to review." required></textarea>
         </label>
 
         <label class="upload-field">
@@ -120,45 +256,49 @@
           <span>I agree to be contacted by Michelle Baker / Oasis World TVL regarding my travel inquiry.</span>
         </label>
 
-        <!--
-          FORMSUBMIT CONFIGURATION
-          Free email delivery to oasisworldtvl@gmail.com.
-          First submission triggers a one-time activation email from FormSubmit.
-        -->
+        <!-- Free FormSubmit delivery. First live submission may require
+             one-time activation from oasisworldtvl@gmail.com. -->
         <input type="hidden" name="_subject" value="New Oasis World TVL Travel Inquiry">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="true">
-        <input type="hidden" name="_next" value="https://oasis-world-tvl.theemmerreliford.workers.dev/#lead-form">
+        <input type="hidden" name="_next" value="https://oasis-world-tvl.theemmerreliford.workers.dev/?submitted=1#lead-form">
         <input type="text" name="_honey" style="display:none">
 
         <button class="button form-submit" type="submit">Send My Trip Details</button>
-
         <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section contact">
       <p class="kicker">Prefer to Reach Out Directly?</p>
       <h2>Michelle is just a message away.</h2>
+
       <div class="contact-grid">
-        <a class="contact-card" href="mailto:oasisworldtvl@gmail.com"><span>✉️</span><strong>Email Michelle</strong><small>oasisworldtvl@gmail.com</small></a>
-        <a class="contact-card" href="tel:8153024824"><span>📞</span><strong>Call Michelle</strong><small>(815) 302-4824</small></a>
-        <a class="contact-card" href="sms:8153024824"><span>💬</span><strong>Text Michelle</strong><small>(815) 302-4824</small></a>
+        <a class="contact-card" href="mailto:oasisworldtvl@gmail.com">
+          <span>✉️</span><strong>Email Michelle</strong><small>oasisworldtvl@gmail.com</small>
+        </a>
+
+        <a class="contact-card" href="tel:8153024824">
+          <span>📞</span><strong>Call Michelle</strong><small>(815) 302-4824</small>
+        </a>
+
+        <a class="contact-card" href="sms:8153024824">
+          <span>💬</span><strong>Text Michelle</strong><small>(815) 302-4824</small>
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div><strong>Oasis World TVL</strong><span>Michelle Baker • The Inspirational Vitamin</span></div>
+    <div>
+      <strong>Oasis World TVL</strong>
+      <span>Michelle Baker • The Inspirational Vitamin</span>
+    </div>
     <p>Your extraordinary escape begins here.</p>
   </footer>
 
-  <!-- ============================================================
-       FLOATING AI CONCIERGE
-       Tailwind utility classes control the fixed bottom-right layout.
-       The bot is currently a FRONTEND SIMULATION ONLY.
-       Replace the mock response in script.js with a live AI endpoint later.
-  ============================================================= -->
+  <!-- FLOATING AI CONCIERGE -->
   <div id="aiConciergeRoot" class="fixed bottom-5 right-5 z-[9999] flex flex-col items-end">
     <div id="aiChatPanel" class="hidden mb-3 w-[min(92vw,380px)] overflow-hidden rounded-3xl border border-[#d8b24c] bg-white shadow-2xl">
       <div class="flex items-center justify-between bg-[#21052f] px-4 py-3 text-white">
@@ -170,9 +310,7 @@
       </div>
 
       <div id="aiMessageLog" class="h-72 overflow-y-auto bg-[#fff8f1] p-4 text-sm">
-        <div class="ai-message bot">
-          Hi! 🤖✨ Tell me where you’d love to go, who’s traveling, your dates, and what kind of experience you want. I can help you organize your ideas before Michelle follows up.
-        </div>
+        <div class="ai-message bot">Hi! 🤖✨ Tell me where you’d love to go, who’s traveling, your dates, and what kind of experience you want. I can help you organize your ideas before Michelle follows up.</div>
       </div>
 
       <form id="aiChatForm" class="flex gap-2 border-t border-[#eadfbf] bg-white p-3">
@@ -181,9 +319,7 @@
       </form>
     </div>
 
-    <button id="aiChatToggle" type="button" class="rounded-full border-2 border-[#d8b24c] bg-[#21052f] px-5 py-3 font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#5a1a76]" aria-expanded="false">
-      🤖 Chat with AI Concierge
-    </button>
+    <button id="aiChatToggle" type="button" class="rounded-full border-2 border-[#d8b24c] bg-[#21052f] px-5 py-3 font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#5a1a76]" aria-expanded="false">🤖 Chat with AI Concierge</button>
   </div>
 
   <script src="script.js"></script>
