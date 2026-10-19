@@ -294,6 +294,7 @@ footer p{margin:0}
 .hero-copy{
   position:relative;
   z-index:2;
+  align-self:end;
   padding:28px 30px;
   border-radius:30px;
   background:rgba(33,5,47,.22);
