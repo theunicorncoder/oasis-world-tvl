@@ -1,3 +1,58 @@
+// OASIS LOCKED ASSET LOADER
+async function loadOasisBase64Asset(paths) {
+  const parts = await Promise.all(paths.map(async (path) => {
+    const response = await fetch(path, { cache: "no-store" });
+    if (!response.ok) throw new Error("Could not load " + path);
+    return (await response.text()).trim();
+  }));
+  return parts.join("");
+}
+
+async function loadLockedOasisVisuals() {
+  try {
+    const [celebration, family, background] = await Promise.all([
+      loadOasisBase64Asset([
+        "assets/celebration-1.b64",
+        "assets/celebration-2.b64",
+        "assets/celebration-3.b64",
+        "assets/celebration-3b.b64",
+        "assets/celebration-4.b64",
+        "assets/celebration-5.b64"
+      ]),
+      loadOasisBase64Asset([
+        "assets/family-1.b64",
+        "assets/family-2.b64",
+        "assets/family-3.b64",
+        "assets/family-4.b64"
+      ]),
+      loadOasisBase64Asset([
+        "assets/background-1.b64",
+        "assets/background-2.b64",
+        "assets/background-3.b64",
+        "assets/background-4.b64",
+        "assets/background-5.b64"
+      ])
+    ]);
+
+    const celebrationImage = document.getElementById("celebrationServiceImage");
+    const familyImage = document.getElementById("familyServiceImage");
+
+    if (celebrationImage) {
+      celebrationImage.src = "data:image/jpeg;base64," + celebration;
+    }
+    if (familyImage) {
+      familyImage.src = "data:image/jpeg;base64," + family;
+    }
+
+    document.documentElement.style.setProperty(
+      "--oasis-page-sky",
+      'url("data:image/jpeg;base64,' + background + '")'
+    );
+  } catch (error) {
+    console.warn("Oasis visual assets could not be loaded:", error);
+  }
+}
+
 /* =========================================================
    OASIS WORLD TVL — INTERACTIVE FRONTEND
    =========================================================
@@ -18,7 +73,7 @@
       AI/API call. Never expose private API keys in this file.
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {\n  loadLockedOasisVisuals();
   const leadForm = document.getElementById("oasisLeadForm");
   const formStatus = document.getElementById("formStatus");
   const tripDetails = document.getElementById("tripDetails");
