@@ -9,7 +9,42 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=oasis-locked-20261019">
+  <style id="oasisLockedVisualStyles">
+    :root{--oasis-page-sky:linear-gradient(135deg,#f7e7f7,#fff0dc)}
+    body{
+      background:
+        linear-gradient(rgba(255,248,241,.78),rgba(250,239,249,.82)),
+        var(--oasis-page-sky);
+      background-position:center top;
+      background-size:cover;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      min-height:100vh;
+    }
+    main{background:transparent}
+    .travel-search-section,.about,.services,.lead-section,.contact{
+      background:rgba(255,250,247,.70);
+      border-radius:34px;
+      margin-top:24px;
+      margin-bottom:24px;
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+      box-shadow:0 18px 45px rgba(67,24,82,.07)
+    }
+    .live-search-card,.service-image-card,.lead-form,.contact-card,.workflow-steps div{
+      background:rgba(255,255,255,.91)
+    }
+    @media(max-width:900px){
+      body{background-attachment:scroll}
+      .travel-search-section,.about,.services,.lead-section,.contact{
+        margin-top:14px;margin-bottom:14px;border-radius:24px
+      }
+    }
+    @media(max-width:600px){
+      .travel-search-section,.about,.services,.lead-section,.contact{border-radius:18px}
+    }
+  </style>
 
   <!-- Tailwind is currently used only for the floating AI Concierge shell. -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -314,6 +349,46 @@
     <button id="aiChatToggle" type="button" class="rounded-full border-2 border-[#d8b24c] bg-[#21052f] px-5 py-3 font-bold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#5a1a76]" aria-expanded="false">🤖 Chat with AI Concierge</button>
   </div>
 
-  <script src="script.js"></script>
+  <script id="oasisLockedAssetLoader">
+    (async function(){
+      async function joinParts(paths){
+        const parts = await Promise.all(paths.map(async function(path){
+          const response = await fetch(path, {cache:"no-store"});
+          if(!response.ok) throw new Error("Could not load "+path);
+          return (await response.text()).trim();
+        }));
+        return parts.join("");
+      }
+      try{
+        const assets = await Promise.all([
+          joinParts([
+            "assets/celebration-1.b64","assets/celebration-2.b64",
+            "assets/celebration-3.b64","assets/celebration-3b.b64",
+            "assets/celebration-4.b64","assets/celebration-5.b64"
+          ]),
+          joinParts([
+            "assets/family-1.b64","assets/family-2.b64",
+            "assets/family-3.b64","assets/family-4.b64"
+          ]),
+          joinParts([
+            "assets/background-1.b64","assets/background-2.b64",
+            "assets/background-3.b64","assets/background-4.b64",
+            "assets/background-5.b64"
+          ])
+        ]);
+        const celebration=document.getElementById("celebrationServiceImage");
+        const family=document.getElementById("familyServiceImage");
+        if(celebration) celebration.src="data:image/jpeg;base64,"+assets[0];
+        if(family) family.src="data:image/jpeg;base64,"+assets[1];
+        document.documentElement.style.setProperty(
+          "--oasis-page-sky",
+          'url("data:image/jpeg;base64,'+assets[2]+'")'
+        );
+      }catch(error){
+        console.warn("Oasis approved visual assets could not be loaded:",error);
+      }
+    })();
+  </script>
+  <script src="script.js?v=oasis-locked-20261019"></script>
 </body>
 </html>
